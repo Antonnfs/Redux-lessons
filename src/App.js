@@ -9,16 +9,16 @@ function App() {
   const cash = useSelector(state => state.cash.cash)
   const customers = useSelector(state => state.customer.customers)
 
-  function addCash(cash) {
+  function addCash() {
     dispatch({
       type: ADD_CASH,
-      payload: cash
+      payload: 1,
     })
   }
-  function getCash(cash) {
+  function getCash() {
     dispatch({
       type: GET_CASH,
-      payload: cash
+      payload: 1,
     })
   }
   function addCustomer(name) {
@@ -37,8 +37,8 @@ function App() {
       <div className='flex min-h-screen flex-col  justify-center items-center'>
         <h2 className=' text-4xl'>Balance: {cash}$</h2>
         <div className='flex my-3'>
-          <button onClick={() => addCash(+prompt())} className='border rounded px-3 py-2 bg-teal-400 mx-2 cursor-pointer'>top up the account</button>
-          <button onClick={() => getCash(+prompt())} className='border rounded px-3 py-2 bg-teal-400 mx-2 cursor-pointer'>withdraw from the account</button>
+          <button onClick={() => addCash()} className='border rounded px-3 py-2 bg-teal-400 mx-2 cursor-pointer'>top up the account</button>
+          <button onClick={() => getCash()} className='border rounded px-3 py-2 bg-teal-400 mx-2 cursor-pointer'>withdraw from the account</button>
           <button onClick={() => addCustomer(prompt())} className='border rounded px-3 py-2 bg-teal-400 mx-2 cursor-pointer'>Add customer</button>
           <button onClick={() => dispatch(fetchCustomers())} className='border rounded px-3 py-2 bg-teal-400 mx-2 cursor-pointer'>Get customers from database</button>
         </div>
