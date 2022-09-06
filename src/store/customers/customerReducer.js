@@ -1,7 +1,7 @@
 import { ADD_CUSTOMER, REMOVE_CUSTOMER, ADD_MANY_CUSTOMERS } from "./customerVars";
 
 const defaultState = {
-	customers: [{name: 'lox', id: 555}]
+	customers: [{name: 'user', id: Date.now()}]
 }
 
 
