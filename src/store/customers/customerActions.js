@@ -1,4 +1,4 @@
-import { ADD_CUSTOMER, REMOVE_CUSTOMER, ADD_MANY_CUSTOMERS } from "./customerVars";
+import { ADD_CUSTOMER, REMOVE_CUSTOMER, ADD_MANY_CUSTOMERS, FETCH_USERS } from "./customerVars";
 
 export const addManyCustomersAction = (payload) => ({
 	type: ADD_MANY_CUSTOMERS,
@@ -11,4 +11,7 @@ export const addCustomerAction = (payload) => ({
 export const removeCustomerAction = (payload) => ({
 	type: REMOVE_CUSTOMER,
 	payload
+})
+export const fetchUsers = () => ({
+	type: FETCH_USERS,
 })

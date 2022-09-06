@@ -1,18 +1,19 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { addCashAction, getCashAction } from './store/cash/cashActions';
+import { addCashAction, getCashAction, asyncAddCashAction, asyncGetCashAction } from './store/cash/cashActions';
 import { addCustomerAction, removeCustomerAction } from './store/customers/customerActions';
 import { fetchCustomers } from './asyncActions/customers';
+import { fetchUsers } from './store/customers/customerActions';
 
 function App() {
   const dispatch = useDispatch();
   const cash = useSelector(state => state.cash.cash)
   const customers = useSelector(state => state.customer.customers)
 
-  function addCash(payload) {
-    dispatch(addCashAction(payload))
+  function addCash() {
+    dispatch(addCashAction())
   }
-  function getCash(payload) {
-    dispatch(getCashAction(payload))
+  function getCash() {
+    dispatch(getCashAction())
   }
   function addCustomer(name) {
     const customer = {
@@ -30,10 +31,10 @@ function App() {
       <div className='flex min-h-screen flex-col  justify-center items-center'>
         <h2 className=' text-4xl'>Balance: {cash}$</h2>
         <div className='flex my-3'>
-          <button onClick={() => addCash(5)} className='border rounded px-3 py-2 bg-teal-400 mx-2 cursor-pointer'>top up the account</button>
-          <button onClick={() => getCash(5)} className='border rounded px-3 py-2 bg-teal-400 mx-2 cursor-pointer'>withdraw from the account</button>
+          <button onClick={() => dispatch(asyncAddCashAction())} className='border rounded px-3 py-2 bg-teal-400 mx-2 cursor-pointer'>top up the account</button>
+          <button onClick={() => dispatch(asyncGetCashAction())} className='border rounded px-3 py-2 bg-teal-400 mx-2 cursor-pointer'>withdraw from the account</button>
           <button onClick={() => addCustomer(prompt())} className='border rounded px-3 py-2 bg-teal-400 mx-2 cursor-pointer'>Add customer</button>
-          <button onClick={() => dispatch(fetchCustomers())} className='border rounded px-3 py-2 bg-teal-400 mx-2 cursor-pointer'>Get customers from database</button>
+          <button onClick={() => dispatch(fetchUsers())} className='border rounded px-3 py-2 bg-teal-400 mx-2 cursor-pointer'>Get customers from database</button>
         </div>
         {customers.length > 0 ? 
           <div>

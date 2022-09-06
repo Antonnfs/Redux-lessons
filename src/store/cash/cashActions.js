@@ -1,11 +1,15 @@
-import { ADD_CASH, GET_CASH } from './cashVars';
+import { ADD_CASH, GET_CASH, ASYNC_ADD_CASH, ASYNC_GET_CASH } from './cashVars';
 
 
-export const addCashAction = (payload) => ({
+export const addCashAction = () => ({
 	type: ADD_CASH,
-	payload,
 }) 
-export const getCashAction = (payload) => ({
+export const getCashAction = () => ({
 	type: GET_CASH,
-	payload,
 }) 
+export const asyncAddCashAction = () => ({
+	type: ASYNC_ADD_CASH,
+})
+export const asyncGetCashAction = () => ({
+	type: ASYNC_GET_CASH,
+})
