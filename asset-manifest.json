@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Redux-lessons/static/css/main.18c64992.css",
+    "main.js": "/Redux-lessons/static/js/main.df49f5a1.js",
+    "index.html": "/Redux-lessons/index.html",
+    "main.18c64992.css.map": "/Redux-lessons/static/css/main.18c64992.css.map",
+    "main.df49f5a1.js.map": "/Redux-lessons/static/js/main.df49f5a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18c64992.css",
+    "static/js/main.df49f5a1.js"
+  ]
+}
